@@ -19,3 +19,5 @@ A twitch bot for my friend's twitch channel. Has some specific commands but is m
 1. Web front end for control when a mod isn't around.
 2. Mod specific commands and actions.
 3. Github hooks with twitch to run bot without handlebars!
+4. Persistence (SQLite, Firebase, something else?)
+5. Typescript?
