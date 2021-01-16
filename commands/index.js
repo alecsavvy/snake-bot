@@ -5,4 +5,5 @@ module.exports = {
   sing: require("./sing"),
   ban: require("./ban"),
   socials: require("./socials"),
+  pokedex: require("./pokedex"),
 };

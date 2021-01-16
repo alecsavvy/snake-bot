@@ -34,4 +34,5 @@ client.on("message", (channel, tags, message, self) => {
   commands.ban(client, channel, message);
   commands.sing(client, channel, message);
   commands.socials(client, channel, message);
+  commands.pokedex(client, channel, message);
 });

@@ -12,6 +12,7 @@
   "dependencies": {
     "axios": "^0.21.1",
     "dotenv": "^8.2.0",
+    "image-to-ascii": "^3.0.13",
     "tmi.js": "^1.5.0"
   }
 }

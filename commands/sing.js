@@ -128,5 +128,3 @@ const removePunctuation = (line) => {
 
 // flatten for search
 const songs = lyrics.flat().map(removePunctuation);
-
-console.log(songs);
