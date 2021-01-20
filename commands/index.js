@@ -6,4 +6,6 @@ module.exports = {
   ban: require("./ban"),
   socials: require("./socials"),
   pokedex: require("./pokedex"),
+  lurk: require("./lurk"),
+  test: require("./test"),
 };

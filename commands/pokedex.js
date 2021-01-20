@@ -1,37 +1,15 @@
-const img2ascii = require("image-to-ascii");
-const axios = require("axios");
+const { braillefy } = require('img2braille');
 
-module.exports = (client, channel, message) => {
+module.exports = async (client, channel, message) => {
   if (message.toLowerCase().startsWith("!pokedex")) {
     // parse first word as pokemon name, ignore the rest
     const pokemonName = message.split(" ")[1].toLowerCase();
-    console.log(pokemonName);
+    const pokemonImage = `https://img.pokemondb.net/artwork/large/${pokemonName}.jpg`;
 
-    // hit poke api
-    axios
-      .get(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
-      .then((response) => {
-        // parse response for image
-        const pokemon = response.data.sprites;
-        const pokemonImage = pokemon.front_default;
-        console.log(pokemonImage);
+    const asciiOpts = { monospace: true };
 
-        const options = {
-          colored: false,
-          stringify: true,
-          size: {
-            height: 10,
-            width: 10,
-          },
-        };
+    const result = await braillefy(pokemonImage, 30, asciiOpts);
 
-        img2ascii(pokemonImage, options, (err, result) => {
-          const img = [...result]
-            .map((char) => (char === "@" ? "." : char))
-            .join("");
-          client.say(channel, img);
-        });
-      })
-      .catch(console.log);
+    client.say(channel, result.substring(0, 500));
   }
 };

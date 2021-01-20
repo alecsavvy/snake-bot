@@ -4,7 +4,9 @@ module.exports = (client, channel, message) => {
   });
 
   if (index >= 0) {
-    client.say(channel, `🎶 ${songs[index + 1]} 🎶`);
+    let line = songs[index + 1];
+    if (line === "say baby") { line = line.toUpperCase(); }
+    client.say(channel, `🎶 ${line} 🎶`);
   }
 };
 
@@ -12,6 +14,7 @@ module.exports = (client, channel, message) => {
 // array of arrays for organization
 // https://codepen.io/franciskim/pen/eNjrpR
 const lyrics = [
+  ["Well I remember as it were a meal ago","Said Tommy the Cat as he reeled back to clear whatever foreign matter","May have nestled its way into his mighty throat.","Many a fat alley rat had met its demise while staring point blank down","The cavernous barrel of this awesome prowling machine.","Truly a wonder of nature this urban predator.","Tommy the cat had many a story to tell,","But it was a rare occasion such as this that he did.","She came slidin' down the alleyway like butter drippin' off a hot biscuit.","The aroma, the mean scent, was enough to arouse suspicion in even the","Oldest of Tigers that hung around the hot spot in those days.","The sight was beyond belief.","Many a head snapped for double - even triple - takes as this vivacious","Feline made her her way into the delta of the alleyway where the most","Virile of the young tabbys were known to hang out.","They hung in droves. Such a multitude of masculinity could only be","Found in one place...","And that was O'malley's Alley.","The air was thick with cat calls (no pun intended),","But not even a muscle in her neck did twitch as she sauntered up into","The heart of the alleyway.","She knew what she wanted.","She was lookin' for that stud bull, she was looking for that he cat.","And that was me.","Tommy the Cat is my name and I say unto thee...","Say baby do you want to lay down with me","Say baby do you want to lay down by my side","Ah baby do you want to lay down with me","Say baby", "say baby"],
   [
     // in my life, the beatles
     "There are places I'll remember",
