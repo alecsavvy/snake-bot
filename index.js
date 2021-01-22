@@ -24,7 +24,7 @@ const client = new tmi.Client({
 
 client.connect();
 
-client.on("message", (channel, tags, message, self) => {
+client.on("message", async (channel, tags, message, self) => {
   // Ignore echoed messages.
   if (self) return;
 
@@ -38,12 +38,8 @@ client.on("message", (channel, tags, message, self) => {
   commands.ban(client, channel, message);
   commands.sing(client, channel, message);
   commands.socials(client, channel, message);
-  commands.lurk(client,channel, tags, message);
-  commands.test(client,channel, tags, message);
-  (async () => {
-    await commands.pokedex(client, channel, message).catch((e) => {
-      console.log(e);
-      client.say(channel, `@${tags.username} guess we haven't caught them all!`)
-    });
-  })();
+  commands.lurk(client, channel, tags, message);
+  commands.test(client, channel, tags, message);
+
+  await commands.pokedex(client, channel, message).catch(console.error);
 });
