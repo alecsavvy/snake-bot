@@ -35,7 +35,7 @@ client.on("message", async (channel, tags, message, self) => {
   commands.yee(client, channel, tags, message);
   commands.rip(client, channel, message);
   commands.slither(client, channel, message);
-  commands.ban(client, channel, message);
+  commands.ban(client, channel, tags, message);
   commands.sing(client, channel, message);
   commands.socials(client, channel, message);
   commands.lurk(client, channel, tags, message);

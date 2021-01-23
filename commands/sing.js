@@ -47,7 +47,7 @@ const lyrics = [
     "Would you like that?",
     "And I don't mind",
     "If you say this love is the last time",
-    "So now I'll ask, do you like that?",
+    "So now I'll ask"," do you like that?",
     "Do you like that? No!",
     "Something's getting in the way",
     "Something's just about to break",
