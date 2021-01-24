@@ -40,6 +40,7 @@ client.on("message", async (channel, tags, message, self) => {
   commands.socials(client, channel, message);
   commands.lurk(client, channel, tags, message);
   commands.test(client, channel, tags, message);
+  commands.stonks(client, channel, tags, message);
 
   await commands.pokedex(client, channel, message).catch(console.error);
 });

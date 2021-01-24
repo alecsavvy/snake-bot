@@ -8,4 +8,5 @@ module.exports = {
   pokedex: require("./pokedex"),
   lurk: require("./lurk"),
   test: require("./test"),
+  stonks: require("./stonks"),
 };
