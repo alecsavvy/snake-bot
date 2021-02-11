@@ -3,14 +3,6 @@ module.exports = (client, channel, tags, message) => {
     on_ban(client, channel, tags, message);
   }
 
-  if (message.toLowerCase().startsWith("!snowflake")) {
-    client.say(channel, "oh look! @pgraci is here! ❄️")
-  }
-
-  if (message.toLowerCase().startsWith("!roland")) {
-    client.say(channel, "@roland_gunslinger1991 pew pew 💥")
-  }
-
   if (message.toLowerCase().includes("unit")) {
     client.say(channel, `${tags.username} suck my unit`);
   }

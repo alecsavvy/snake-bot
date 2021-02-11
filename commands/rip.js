@@ -17,6 +17,7 @@ const on_rip = (client, channel, message) => {
   const times = add_death(name);
   if (times === 1) {
     client.say(channel, `it was ${name}'s first death! Hooray!`);
+    return;
   }
   client.say(channel, `${name} has died ${times} times so far!`);
 };

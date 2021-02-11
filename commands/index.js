@@ -9,4 +9,5 @@ module.exports = {
   lurk: require("./lurk"),
   test: require("./test"),
   stonks: require("./stonks"),
+  friends: require("./friends"),
 };
