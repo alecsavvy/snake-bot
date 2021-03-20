@@ -1,4 +1,5 @@
 module.exports = {
+  advice: require("./advice"),
   yee: require("./yee"),
   rip: require("./rip"),
   slither: require("./slither"),

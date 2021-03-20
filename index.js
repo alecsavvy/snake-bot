@@ -42,6 +42,13 @@ client.on("message", async (channel, tags, message, self) => {
   commands.test(client, channel, tags, message);
   commands.stonks(client, channel, tags, message);
   commands.friends(client, channel, tags, message);
+  commands.advice(client, channel, tags, message);
 
   await commands.pokedex(client, channel, message).catch(console.error);
 });
+
+client.on("cheer", (channel, userstate, message) => {
+  if (userstate.username.toLocaleLowerCase() === "irishluck1441") {
+      client.say(channel, `@lemonadejetpack BAN HAMMER BOP BOP BOP`);
+  }
+})
