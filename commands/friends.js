@@ -14,7 +14,7 @@ module.exports = (client, channel, tags, message) => {
   }
 
   if (message.toLowerCase().includes("i know that truck")) {
-    client.say(channel, "FORD FUCKIN RANGER");
+    client.say(channel, "FORD RANGER");
   }
 
   if (message.toLowerCase().includes("i aint no stranger")) {
@@ -34,8 +34,8 @@ let pokeCache = [];
 
 // state object for searches
 let pokeSearch = {
-	inProgress: false, // true if a pokemon is already being guessed at
-	name: false,
+  inProgress: false, // true if a pokemon is already being guessed at
+  name: false,
 }
 
 // get all countries from API, only called once
@@ -56,7 +56,7 @@ const findPokemon = (client, channel, tags, message) => {
   pokeSearch.name = pokemon.name;
   setTimeout(() => {
     client.say(channel, `the pokemon is... ${pokemon.name}!`);
-	pokeSearch.inProgress = false;
-	pokeSearch.name = false;
+    pokeSearch.inProgress = false;
+    pokeSearch.name = false;
   }, timeout);
 }

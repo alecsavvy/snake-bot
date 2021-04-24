@@ -24,6 +24,9 @@ const client = new tmi.Client({
 
 client.connect();
 
+// insert interval messages here
+
+
 client.on("message", async (channel, tags, message, self) => {
   // Ignore echoed messages.
   if (self) return;
@@ -39,7 +42,7 @@ client.on("message", async (channel, tags, message, self) => {
   commands.sing(client, channel, message);
   commands.socials(client, channel, message);
   commands.lurk(client, channel, tags, message);
-  commands.test(client, channel, tags, message);
+  commands.test(client, channel, tags, message, bannedChannels);
   commands.stonks(client, channel, tags, message);
   commands.friends(client, channel, tags, message);
   commands.advice(client, channel, tags, message);
@@ -49,6 +52,6 @@ client.on("message", async (channel, tags, message, self) => {
 
 client.on("cheer", (channel, userstate, message) => {
   if (userstate.username.toLocaleLowerCase() === "irishluck1441") {
-      client.say(channel, `@lemonadejetpack BAN HAMMER BOP BOP BOP`);
+    client.say(channel, `@lemonadejetpack BAN HAMMER BOP BOP BOP`);
   }
 })
